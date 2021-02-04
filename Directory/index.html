@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>Directory</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link href="./libs/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="./libs/css/style.css" rel="stylesheet" type="text/css">
+  </link>
+
+</head>
+
+<body>
+
+  <h1 id="titleSection">Directory</h1>  
+
+
+<div id="mainViewScreen" hidden>
+  <div id="searchElements" class="menubox">
+
+    <h6>Search Element</h6>
+
+
+    <table class="table-sm">
+      <tr>
+        <th>Type</th>
+        <td>
+          <select class="form-select" name="type" id="typeDropdownMain">
+            <option value="Department">Department</option>
+            <option value="Personnel">Personnel</option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <th>By</th>
+        <td>
+          <select class="form-select" name="field" id="byDropdownMain">
+            <option value="Department">Department</option>
+            <option value="Location">Location</option>
+            <option class="DrDwnHid" value="firstName">First Name</option>
+            <option class="DrDwnHid" value="lastName">Last Name</option>
+            <option class="DrDwnHid" value="jobTitle">Job Title</option>
+            <option class="DrDwnHid" value="email">e-mail</option>
+          </select>
+        </td>
+      </tr>
+
+      <th>Field</th>
+      <td><input type="text" id="fieldInputMain"></td>
+
+    </table>
+
+    <button type="button" class="btn btn-primary" id="searchBtn">Search</button>  
+
+ 
+
+  </div>
+
+
+  <div id="addNewElement" class="menubox">
+    <h6>Add New Element</h6>
+
+    <table class="table-sm">
+      <th>Create</th>
+      <td>
+        <select class="form-select" name="typeCreate" id="typeDropdownCreate">
+          <option value="Personnel">Personnel</option>
+          <option value="Department">Department</option>
+        </select>
+      </td>
+    </table>
+
+    <button type="button" class="btn btn-primary" id="createBtn">Create</button>
+   
+  </div>
+
+</div>
+
+<div id="tableSearchPerScreen" hidden>
+
+  
+
+  <div id="tableSearchPerFrame" class="menubox">
+
+    <h6>Personel Search</h6>
+
+    <table class="table-sm table-striped"   id="tableSearchPer">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Job</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Location</th>
+      </tr>
+
+    </table>
+  </div>
+  
+  <button type="button" class="backtoMain btn btn-primary">Back</button> 
+
+</div>
+
+<div id="tableSearchDepScreen" hidden>
+
+  <div id="tableSearchDepFrame" class="menubox">
+
+    <h6>Department search</h6>
+
+    <table class="table-sm table-striped" id="tableSearchDep">
+      <tr>
+        <th>Department</th>
+        <th>Location</th>
+      </tr>
+
+    </table>
+  </div>
+  
+  <button type="button" class="backtoMain btn btn-primary" >Back</button> 
+
+</div>
+
+<div id="elemViewPerScreen" hidden>
+
+
+  <div id="elemViewPerFrame" class="menubox">
+
+    <h6>Personnel viewer</h6>
+
+    <table class="table-sm" id="tableelemViewPer">
+      <tr>
+        <th>First Name</th>
+        <td id="elemViewPerFirstName"></td>
+      </tr>
+
+      <tr>
+        <th>Last Name</th>
+        <td id="elemViewPerLastName"></td>
+      </tr>
+
+      <tr>
+        <th>Job</th>
+        <td id="elemViewPerJob"></td>
+      </tr>
+
+      <tr>
+        <th>Email</th>
+        <td  id="elemViewPerEmail"></td>
+      </tr>
+
+      <tr>
+        <th>Department</th>
+        <td id="elemViewPerDepartment"></td>
+      </tr>
+
+      <tr>
+        <th>Location</th>
+        <td id="elemViewPerLocation"></td>
+      </tr>
+
+    </table>
+  </div>
+  
+  <button type="button" class="backtoMain btn btn-primary">Back</button> 
+  <button type="button" class="backtoMain btn btn-primary" id="deletePerBtn">Delete</button> 
+
+</div>
+
+<div id="elemViewDepScreen" hidden>
+  
+
+  <div id="elemViewDepFrame" class="menubox">
+
+    <h6>Department viewer</h6>
+
+    <table class="table-sm" id="tableElemViewDep">
+      <tr>
+        <th>Department</th>
+        <td id="elemViewDepDepartment"></td>
+      </tr>
+
+      <tr>
+        <th>Location</th>
+        <td id="elemViewDepLocation"></td>
+      </tr>
+
+    </table>
+  </div>
+  
+  <button type="button" class="backtoMain btn btn-primary">Back</button> 
+  <button type="button" class="btn btn-primary" id="deleteDepBtn">Delete</button> 
+</div>
+
+<div id="formViewPerScreen" hidden>
+  <h6>Form Personnel</h6>
+
+  <div id="formViewPerFrame" class="menubox">
+    <table class="table-sm" id="tableFormViewPer">
+      <tr>
+        <th>First Name</th>
+        <td><input type="text" id="formPerFirstName"></td>
+      </tr>
+
+      <tr>
+        <th>Last Name</th>
+        <td><input type="text" id="formPerLastName"></td>
+      </tr>
+
+      <tr>
+        <th>Job</th>
+        <td><input type="text" id="formPerJob"></td>
+      </tr>
+
+      <tr>
+        <th>Email</th>
+        <td><input type="text" id="formPerEmail"></td>
+      </tr>
+
+      <tr>
+        <th>Department</th>
+        <td>
+          <select class="form-select" id="formPerDepName">
+            <option value="Personnel"></option>
+          </select>
+        </td>
+      </tr>
+
+      <tr>
+        <th>Location</th>
+
+        <td>
+        <select class="form-select" id="formPerLocName">
+          <option value="London">London</option>
+          <option value="Munich">Munich</option>
+          <option value="Chicago">Chicago</option>
+          <option value="Paris">Paris</option>
+          <option value="Rome">Rome</option>
+        </select>
+      </td>
+      </tr>
+
+    </table>
+  </div>
+
+  <button type="button" class="backtoMain btn btn-primary">Back</button>
+  <button type="button" class="btn btn-primary" id="saveFormPer">Save</button>
+
+</div>
+
+<div id="formViewDepScreen" hidden>
+  <h6>Form Department</h6>
+
+  <div id="elemViewPerFrame" class="menubox">
+    <table class="table-sm" id="tableelemViewPer">
+
+      <tr>
+        <th>Department</th>
+        <td>
+          <input type="text" id="formDepName">
+        </td>
+      </tr>
+
+      <tr>
+        <th>Location</th>
+
+        <td>
+          <select class="form-select" id="formDepLocName">
+            <option value=1>London</option>
+            <option value=2>Chicago</option>
+            <option value=3>Paris</option>
+            <option value=4>Munich</option>
+            <option value=5>Rome</option>
+          </select>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+
+  <button type="button" class="backtoMain btn btn-primary">Back</button> 
+  <button type="button" class="btn btn-primary" id="saveFormDep">Save</button>
+
+</div>
+
+
+
+
+</div>
+
+
+
+  <script type="application/javascript" src="libs/js/jquery-2.2.3.min.js"></script>
+  <script src="libs/js/script.js"></script>
+
+</body>
+
+</html>
